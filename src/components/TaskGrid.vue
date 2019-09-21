@@ -5,6 +5,7 @@
                 v-for="(task, i) in tasks"
                 :key="task.name"
                 :task="task"
+                @taskStateChanged="$emit('taskStateChanged', i)"
                 @taskDeleted="$emit('taskDeleted', i)" />
         </template>
         <p v-else class="no-task">Sua vida está em dia :)</p>
